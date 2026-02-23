@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: white;
+  color: rgb(30 41 59);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.prose {
+  color: rgb(71 85 105);
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: rgb(15 23 42);
+  font-weight: 700;
+}
+
+.prose a {
+  color: rgb(8 126 105);
+  text-decoration: none;
+}
+
+.prose a:hover {
+  color: rgb(5 122 108);
+}
+
+.prose strong {
+  color: rgb(15 23 42);
+  font-weight: 600;
+}
