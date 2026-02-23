@@ -7,6 +7,14 @@ export interface ArticleFrontmatter {
   description: string;
   date: string;
   author: string;
+  reviewer: string;
+  brand?: string;
+  price?: string;
+  rating?: number;
+  torque?: string;
+  rpm?: string;
+  vibration?: string;
+  safetyFeatures?: string[];
   tags: string[];
   featured?: boolean;
   topPick?: boolean;

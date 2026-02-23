@@ -5,9 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --clinical-primary: 20 184 166;
-  --clinical-primary-dark: 5 122 108;
-  --clinical-light: 240 253 250;
+  --medical-primary: 0 94 184;
+  --medical-primary-dark: 0 71 152;
+  --medical-light: 239 246 255;
   --slate-50: 248 250 252;
   --slate-100: 241 245 249;
   --slate-200: 226 232 240;
@@ -29,29 +29,16 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, rgb(248 250 252) 0%, rgb(240 253 250) 100%);
-  color: rgb(var(--slate-800));
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: rgb(var(--slate-25));
+  color: rgb(var(--slate-900));
+  font-family: "Inter", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Modern link styles */
-a {
-  color: rgb(var(--clinical-primary));
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-a:hover {
-  color: rgb(var(--clinical-primary-dark));
-  transform: translateY(-1px);
-}
-
-/* Professional typography */
+/* Clinical Professional Typography */
 h1, h2, h3, h4, h5, h6 {
   color: rgb(var(--slate-900));
   font-weight: 700;
@@ -66,10 +53,25 @@ h4 { font-size: 1.25rem; }
 h5 { font-size: 1.125rem; }
 h6 { font-size: 1rem; }
 
+/* Professional link styles */
+a {
+  color: rgb(var(--medical-primary));
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: rgb(var(--medical-primary-dark));
+  transform: translateY(-1px);
+}
+
 /* Enhanced prose styles */
 .prose {
-  color: rgb(var(--slate-600));
+  color: rgb(var(--slate-700));
   max-width: none;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 .prose h1,
@@ -80,11 +82,11 @@ h6 { font-size: 1rem; }
 .prose h6 {
   color: rgb(var(--slate-900));
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .prose a {
-  color: rgb(var(--clinical-primary));
+  color: rgb(var(--medical-primary));
   text-decoration: none;
   font-weight: 600;
   border-bottom: 1px solid transparent;
@@ -92,8 +94,8 @@ h6 { font-size: 1rem; }
 }
 
 .prose a:hover {
-  color: rgb(var(--clinical-primary-dark));
-  border-bottom-color: rgb(var(--clinical-primary));
+  color: rgb(var(--medical-primary-dark));
+  border-bottom-color: rgb(var(--medical-primary));
 }
 
 .prose strong {
@@ -102,82 +104,211 @@ h6 { font-size: 1rem; }
 }
 
 .prose p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .prose ul,
 .prose ol {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   padding-left: 1.5rem;
 }
 
 .prose li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
-/* Modern button styles */
-.btn-primary {
-  background: linear-gradient(135deg, rgb(var(--clinical-primary)) 0%, rgb(var(--clinical-primary-dark)) 100%);
+/* Clinical button styles */
+.btn-medical {
+  background: rgb(var(--medical-primary));
   color: white;
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: 0.375rem;
   font-weight: 600;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: shadow-clinical;
 }
 
-.btn-primary:hover {
+.btn-medical:hover {
+  background: rgb(var(--medical-primary-dark));
   transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: shadow-clinical-lg;
 }
 
 .btn-secondary {
   background: white;
-  color: rgb(var(--clinical-primary));
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
+  color: rgb(var(--medical-primary));
+  padding: 0.875rem 2rem;
+  border-radius: 0.375rem;
   font-weight: 600;
-  border: 2px solid rgb(var(--clinical-primary));
+  border: 2px solid rgb(var(--medical-primary));
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
-  background: rgb(var(--clinical-light));
+  background: rgb(var(--medical-light));
   transform: translateY(-2px);
 }
 
-/* Card styles */
-.card {
+/* Clinical card styles */
+.card-clinical {
   background: white;
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 0.5rem;
+  box-shadow: shadow-clinical;
   transition: all 0.3s ease;
   border: 1px solid rgb(var(--slate-200));
 }
 
-.card:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  transform: translateY(-4px);
-  border-color: rgb(var(--clinical-primary));
+.card-clinical:hover {
+  box-shadow: shadow-clinical-lg;
+  transform: translateY(-2px);
+  border-color: rgb(var(--medical-primary));
 }
 
-/* Section backgrounds */
-.section-light {
-  background: rgb(var(--slate-50));
+/* Grid pattern background */
+.grid-pattern-bg {
+  background-color: rgb(var(--slate-25));
+  background-image: 
+    linear-gradient(to right, rgba(0, 94, 184, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 94, 184, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
-.section-white {
-  background: white;
+/* Technical spec styles */
+.spec-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgb(var(--slate-100));
 }
 
-/* Icon styles */
-.icon-primary {
-  color: rgb(var(--clinical-primary));
+.spec-row:last-child {
+  border-bottom: none;
 }
 
-.icon-secondary {
+.spec-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: rgb(var(--medical-primary));
+  flex-shrink: 0;
+}
+
+.spec-label {
+  font-size: 0.875rem;
   color: rgb(var(--slate-500));
+  font-weight: 500;
+}
+
+.spec-value {
+  font-size: 1rem;
+  color: rgb(var(--slate-900));
+  font-weight: 600;
+}
+
+/* Authenticity Warning Styles */
+.authenticity-warning {
+  background: rgb(var(--amber-50));
+  border: 2px solid rgb(var(--amber-400));
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.authenticity-warning-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  color: rgb(var(--amber-700));
+  margin-bottom: 0.75rem;
+}
+
+.authenticity-warning-content {
+  color: rgb(var(--amber-800));
+  line-height: 1.6;
+}
+
+/* TOC Styles */
+.toc-sidebar {
+  position: sticky;
+  top: 6rem;
+  height: fit-content;
+  background: white;
+  border: 1px solid rgb(var(--slate-200));
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-left: 2rem;
+  width: 16rem;
+  box-shadow: shadow-clinical;
+}
+
+.toc-title {
+  font-weight: 700;
+  color: rgb(var(--slate-900));
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.toc-link {
+  display: block;
+  padding: 0.5rem 0;
+  color: rgb(var(--slate-600));
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  border-left: 2px solid transparent;
+  padding-left: 0.75rem;
+}
+
+.toc-link:hover {
+  color: rgb(var(--medical-primary));
+  border-left-color: rgb(var(--medical-primary));
+}
+
+.toc-link.active {
+  color: rgb(var(--medical-primary));
+  border-left-color: rgb(var(--medical-primary));
+  font-weight: 600;
+}
+
+/* Mobile TOC */
+.mobile-toc {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 50;
+}
+
+/* Certified Badge */
+.certified-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, rgb(var(--medical-primary)) 0%, rgb(var(--medical-primary-dark)) 100%);
+  color: white;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: shadow-clinical;
+}
+
+/* Technical Spec Label */
+.technical-spec-label {
+  background: rgb(var(--slate-100));
+  color: rgb(var(--slate-700));
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.75rem;
+  display: inline-block;
 }
