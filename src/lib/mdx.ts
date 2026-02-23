@@ -50,7 +50,9 @@ export function getAllArticles(): Article[] {
     });
 
   return allArticlesData.sort((a, b) => {
-    return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime();
+    const aDate = new Date(a.frontmatter.date).getTime();
+    const bDate = new Date(b.frontmatter.date).getTime();
+    return bDate - aDate;
   });
 }
 

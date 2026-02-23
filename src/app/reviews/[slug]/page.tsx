@@ -2,36 +2,11 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getArticleBySlug, getAllArticles } from '@/lib/mdx';
 import { generateProductSchema, generateReviewSchema, generateBreadcrumbSchema } from '@/lib/structured-data';
-import mdxComponents from '@/app/mdx-components';
 import { TableOfContents } from '@/components/mdx/TableOfContents';
 import { BackToShopButton } from '@/components/common/BackToShopButton';
-import { MDXProvider } from '@mdx-js/react';
-import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote } from 'next-mdx-remote';
 
 interface PageProps {
   params: { slug: string };
-}
-
-// Extract headings from MDX content
-function extractHeadings(content: string) {
-  const headingRegex = /^(#{2,3})\s+(.+)$/gm;
-  const headings = [];
-  let match;
-
-  while ((match = headingRegex.exec(content)) !== null) {
-    const level = match[1].length === 2 ? 2 : 3;
-    const title = match[2].trim();
-    const id = title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-    
-    headings.push({
-      id,
-      title,
-      level
-    });
-  }
-
-  return headings;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -67,6 +42,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+export async function generateStaticParams() {
+  try {
+    const articles = getAllArticles();
+    console.log('Articles found:', articles.length);
+    return articles.map((article) => ({
+      slug: article.slug,
+    }));
+  } catch (error) {
+    console.error('Error in generateStaticParams:', error);
+    return [];
+  }
+}
+
 export default async function ReviewPage({ params }: PageProps) {
   const article = getArticleBySlug(params.slug);
   
@@ -76,7 +64,6 @@ export default async function ReviewPage({ params }: PageProps) {
 
   const { frontmatter, content } = article;
   const headings = extractHeadings(content);
-  const mdxSource = await serialize(content, { mdxComponents });
 
   return (
     <div className="grid md:grid-cols-4 gap-8">
@@ -117,9 +104,7 @@ export default async function ReviewPage({ params }: PageProps) {
           </header>
 
           {/* MDX Content */}
-          <MDXProvider components={mdxComponents}>
-            <MDXRemote {...mdxSource} />
-          </MDXProvider>
+          <div dangerouslySetInnerHTML={{ __html: content }} />
         </article>
 
         {/* Back to Shop Button - Mobile */}
@@ -127,4 +112,25 @@ export default async function ReviewPage({ params }: PageProps) {
       </div>
     </div>
   );
+}
+
+// Extract headings from MDX content
+function extractHeadings(content: string) {
+  const headingRegex = /^(#{2,3})\s+(.+)$/gm;
+  const headings = [];
+  let match;
+
+  while ((match = headingRegex.exec(content)) !== null) {
+    const level = match[1].length === 2 ? 2 : 3;
+    const title = match[2].trim();
+    const id = title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    
+    headings.push({
+      id,
+      title,
+      level
+    });
+  }
+
+  return headings;
 }
