@@ -1,17 +1,17 @@
 {
   "name": "e-file-reviews",
   "version": "1.0.0",
-  "description": "",
+  "description": "Professional e-file and micromotor reviews for UK nail technicians",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["nail", "e-file", "micromotor", "reviews", "uk"],
+  "author": "E-file Reviews",
+  "license": "MIT",
   "type": "commonjs",
   "dependencies": {
     "@next/mdx": "^16.1.6",
@@ -28,5 +28,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "typescript": "^5.9.3"
-  }
+  },
+  "homepage": "https://[USERNAME].github.io/e-file-reviews"
 }
