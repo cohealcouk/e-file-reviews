@@ -2,14 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: white;
-  color: rgb(30 41 59);
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --clinical-primary: 20 184 166;
+  --clinical-primary-dark: 5 122 108;
+  --clinical-light: 240 253 250;
+  --slate-50: 248 250 252;
+  --slate-100: 241 245 249;
+  --slate-200: 226 232 240;
+  --slate-300: 203 213 225;
+  --slate-400: 148 163 184;
+  --slate-500: 100 116 139;
+  --slate-600: 71 85 105;
+  --slate-700: 51 65 85;
+  --slate-800: 30 41 59;
+  --slate-900: 15 23 42;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, rgb(248 250 252) 0%, rgb(240 253 250) 100%);
+  color: rgb(var(--slate-800));
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Modern link styles */
+a {
+  color: rgb(var(--clinical-primary));
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: rgb(var(--clinical-primary-dark));
+  transform: translateY(-1px);
+}
+
+/* Professional typography */
+h1, h2, h3, h4, h5, h6 {
+  color: rgb(var(--slate-900));
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+/* Enhanced prose styles */
 .prose {
-  color: rgb(71 85 105);
+  color: rgb(var(--slate-600));
+  max-width: none;
 }
 
 .prose h1,
@@ -18,20 +78,106 @@ body {
 .prose h4,
 .prose h5,
 .prose h6 {
-  color: rgb(15 23 42);
+  color: rgb(var(--slate-900));
   font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .prose a {
-  color: rgb(8 126 105);
+  color: rgb(var(--clinical-primary));
   text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
 }
 
 .prose a:hover {
-  color: rgb(5 122 108);
+  color: rgb(var(--clinical-primary-dark));
+  border-bottom-color: rgb(var(--clinical-primary));
 }
 
 .prose strong {
-  color: rgb(15 23 42);
+  color: rgb(var(--slate-900));
   font-weight: 600;
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+}
+
+.prose ul,
+.prose ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+/* Modern button styles */
+.btn-primary {
+  background: linear-gradient(135deg, rgb(var(--clinical-primary)) 0%, rgb(var(--clinical-primary-dark)) 100%);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background: white;
+  color: rgb(var(--clinical-primary));
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: 2px solid rgb(var(--clinical-primary));
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: rgb(var(--clinical-light));
+  transform: translateY(-2px);
+}
+
+/* Card styles */
+.card {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgb(var(--slate-200));
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px);
+  border-color: rgb(var(--clinical-primary));
+}
+
+/* Section backgrounds */
+.section-light {
+  background: rgb(var(--slate-50));
+}
+
+.section-white {
+  background: white;
+}
+
+/* Icon styles */
+.icon-primary {
+  color: rgb(var(--clinical-primary));
+}
+
+.icon-secondary {
+  color: rgb(var(--slate-500));
 }

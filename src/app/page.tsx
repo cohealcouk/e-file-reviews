@@ -11,12 +11,12 @@ export default function HomePage() {
   const latestArticles = allArticles.slice(0, 6);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Header />
       
       <main>
         {/* Hero Section */}
-        <section className="bg-slate-50 py-20">
+        <section className="section-light py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
@@ -30,13 +30,13 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/reviews"
-                  className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-4 px-8 rounded-lg transition-colors duration-200"
+                  className="btn-primary"
                 >
                   Browse All Reviews
                 </Link>
                 <Link
                   href="#top-picks"
-                  className="bg-white hover:bg-slate-50 text-teal-700 font-bold py-4 px-8 rounded-lg border-2 border-teal-600 transition-colors duration-200"
+                  className="btn-secondary"
                 >
                   View Top Picks
                 </Link>
@@ -46,32 +46,32 @@ export default function HomePage() {
             {/* Trust Indicators */}
             <div className="grid md:grid-cols-4 gap-8 mt-16">
               <div className="text-center">
-                <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Star className="w-6 h-6 text-teal-600" />
+                <div className="w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Star className="w-8 h-8 text-teal-600" />
                 </div>
-                <h3 className="font-semibold text-slate-900">Expert Reviews</h3>
-                <p className="text-sm text-slate-600 mt-1">Professional testing by certified technicians</p>
+                <h3 className="font-semibold text-slate-900 text-lg mb-2">Expert Reviews</h3>
+                <p className="text-sm text-slate-600">Professional testing by certified technicians</p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Award className="w-6 h-6 text-teal-600" />
+                <div className="w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Award className="w-8 h-8 text-teal-600" />
                 </div>
-                <h3 className="font-semibold text-slate-900">UK Focused</h3>
-                <p className="text-sm text-slate-600 mt-1">Products available in UK market</p>
+                <h3 className="font-semibold text-slate-900 text-lg mb-2">UK Focused</h3>
+                <p className="text-sm text-slate-600">Products available in UK market</p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <TrendingUp className="w-6 h-6 text-teal-600" />
+                <div className="w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <TrendingUp className="w-8 h-8 text-teal-600" />
                 </div>
-                <h3 className="font-semibold text-slate-900">Performance Data</h3>
-                <p className="text-sm text-slate-600 mt-1">Real torque and RPM measurements</p>
+                <h3 className="font-semibold text-slate-900 text-lg mb-2">Performance Data</h3>
+                <p className="text-sm text-slate-600">Real torque and RPM measurements</p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Shield className="w-6 h-6 text-teal-600" />
+                <div className="w-16 h-16 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Shield className="w-8 h-8 text-teal-600" />
                 </div>
-                <h3 className="font-semibold text-slate-900">Unbiased</h3>
-                <p className="text-sm text-slate-600 mt-1">Independent and honest assessments</p>
+                <h3 className="font-semibold text-slate-900 text-lg mb-2">Unbiased</h3>
+                <p className="text-sm text-slate-600">Independent and honest assessments</p>
               </div>
             </div>
           </div>
@@ -79,7 +79,7 @@ export default function HomePage() {
 
         {/* Top Picks Section */}
         {topPicks.length > 0 && (
-          <section id="top-picks" className="py-16 bg-slate-50">
+          <section id="top-picks" className="section-white py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-slate-900 mb-4">Top Picks</h2>
@@ -96,7 +96,7 @@ export default function HomePage() {
 
         {/* Latest Articles Section */}
         {latestArticles.length > 0 && (
-          <section className="py-16">
+          <section className="section-light py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-slate-900 mb-4">Latest Reviews</h2>
@@ -111,7 +111,7 @@ export default function HomePage() {
                 <div className="text-center mt-12">
                   <Link
                     href="/reviews"
-                    className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200"
+                    className="btn-primary"
                   >
                     View All Reviews
                   </Link>
