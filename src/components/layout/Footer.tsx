@@ -17,10 +17,13 @@ export function Footer() {
               Expert technical reviews of professional clinical equipment for UK healthcare professionals. 
               Focus on torque safety, vibration control, and white finger prevention.
             </p>
-            <div className="flex items-center gap-2 text-slate-400 text-xs">
+            <a
+              href="mailto:contact@efilereviews.co.uk"
+              className="flex items-center gap-2 text-slate-400 text-xs hover:text-white transition-colors"
+            >
               <Mail className="w-4 h-4" />
               <span>contact@efilereviews.co.uk</span>
-            </div>
+            </a>
           </div>
           
           {/* Quick Links */}

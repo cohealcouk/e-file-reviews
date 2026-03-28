@@ -8,6 +8,13 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'All Reviews - E-file Reviews',
   description: 'Browse all expert technical reviews of professional e-files and clinical equipment for UK healthcare professionals.',
+  alternates: { canonical: 'https://efilereviews.co.uk/reviews' },
+  openGraph: {
+    title: 'All Reviews - E-file Reviews',
+    description: 'Browse all expert technical reviews of professional e-files and clinical equipment for UK healthcare professionals.',
+    url: 'https://efilereviews.co.uk/reviews',
+    type: 'website',
+  },
 };
 
 export default function ReviewsPage() {

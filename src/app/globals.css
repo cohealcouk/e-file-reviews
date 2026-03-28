@@ -127,13 +127,13 @@ a:hover {
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: shadow-clinical;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .btn-medical:hover {
   background: rgb(var(--medical-primary-dark));
   transform: translateY(-2px);
-  box-shadow: shadow-clinical-lg;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .btn-secondary {
@@ -156,13 +156,13 @@ a:hover {
 .card-clinical {
   background: white;
   border-radius: 0.5rem;
-  box-shadow: shadow-clinical;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
   border: 1px solid rgb(var(--slate-200));
 }
 
 .card-clinical:hover {
-  box-shadow: shadow-clinical-lg;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transform: translateY(-2px);
   border-color: rgb(var(--medical-primary));
 }
@@ -242,7 +242,7 @@ a:hover {
   padding: 1rem;
   margin-left: 2rem;
   width: 16rem;
-  box-shadow: shadow-clinical;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .toc-title {
@@ -296,7 +296,7 @@ a:hover {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  box-shadow: shadow-clinical;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Technical Spec Label */
@@ -311,4 +311,24 @@ a:hover {
   border-radius: 0.25rem;
   margin-bottom: 0.75rem;
   display: inline-block;
+}
+
+/* Keyboard navigation — focus-visible styles */
+:focus-visible {
+  outline: 3px solid rgb(var(--medical-primary));
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+.btn-medical:focus-visible,
+.btn-secondary:focus-visible {
+  outline: 3px solid rgb(var(--medical-primary));
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(0, 94, 184, 0.2);
+}
+
+.toc-link:focus-visible {
+  outline: 2px solid rgb(var(--medical-primary));
+  outline-offset: 2px;
+  border-radius: 0.125rem;
 }

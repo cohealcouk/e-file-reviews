@@ -5,6 +5,8 @@ import { getArticleBySlug, getAllArticles } from '@/lib/mdx';
 import { generateProductSchema, generateReviewSchema, generateBreadcrumbSchema } from '@/lib/structured-data';
 import { TableOfContents } from '@/components/mdx/TableOfContents';
 import { BackToShopButton } from '@/components/common/BackToShopButton';
+import { StarRating } from '@/components/common/StarRating';
+import { Breadcrumb } from '@/components/common/Breadcrumb';
 import {
   ProductCard,
   ProsCons,
@@ -39,10 +41,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: frontmatter.description,
     keywords: frontmatter.tags.join(', '),
     authors: [{ name: frontmatter.reviewer || 'Clinical Equipment Expert' }],
+    alternates: {
+      canonical: `https://efilereviews.co.uk/reviews/${params.slug}`,
+    },
     openGraph: {
       title: frontmatter.title,
       description: frontmatter.description,
       type: 'article',
+      url: `https://efilereviews.co.uk/reviews/${params.slug}`,
     },
     other: {
       'application/ld+json': JSON.stringify([productSchema, reviewSchema, breadcrumbSchema]),
@@ -53,7 +59,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export async function generateStaticParams() {
   try {
     const articles = getAllArticles();
-    console.log('Articles found:', articles.length);
     return articles.map((article) => ({
       slug: article.slug,
     }));
@@ -90,6 +95,12 @@ export default async function ReviewPage({ params }: PageProps) {
 
       {/* Main Content */}
       <div className="md:col-span-3">
+        <Breadcrumb items={[
+          { label: 'Home', href: '/' },
+          { label: 'Reviews', href: '/reviews' },
+          { label: frontmatter.title },
+        ]} />
+
         <article className="prose max-w-none">
           {/* Article Header */}
           <header className="mb-8 pb-6 border-b border-slate-200">
@@ -112,8 +123,7 @@ export default async function ReviewPage({ params }: PageProps) {
               </div>
               {frontmatter.rating && (
                 <div className="flex items-center gap-2">
-                  <span>Rating:</span>
-                  <span className="font-semibold text-slate-800">{frontmatter.rating}/5</span>
+                  <StarRating rating={frontmatter.rating} size="sm" />
                 </div>
               )}
             </div>

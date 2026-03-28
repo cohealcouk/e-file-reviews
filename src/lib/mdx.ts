@@ -24,6 +24,12 @@ export interface Article {
   slug: string;
   frontmatter: ArticleFrontmatter;
   content: string;
+  readTime: number; // minutes
+}
+
+function calculateReadTime(content: string): number {
+  const words = content.trim().split(/\s+/).length;
+  return Math.max(1, Math.round(words / 200));
 }
 
 const contentDirectory = path.join(process.cwd(), 'content', 'articles');
@@ -46,6 +52,7 @@ export function getAllArticles(): Article[] {
         slug,
         frontmatter: data as ArticleFrontmatter,
         content,
+        readTime: calculateReadTime(content),
       };
     });
 
@@ -71,6 +78,7 @@ export function getArticleBySlug(slug: string): Article | null {
       slug,
       frontmatter: data as ArticleFrontmatter,
       content,
+      readTime: calculateReadTime(content),
     };
   } catch (error) {
     console.error(`Error reading article ${slug}:`, error);

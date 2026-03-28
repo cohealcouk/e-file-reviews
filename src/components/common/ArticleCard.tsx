@@ -6,6 +6,7 @@ import { Calendar, Clock, Tag } from 'lucide-react';
 interface ArticleCardProps {
   article: {
     slug: string;
+    readTime: number;
     frontmatter: {
       title: string;
       description: string;
@@ -19,7 +20,7 @@ interface ArticleCardProps {
 }
 
 export function ArticleCard({ article, featured = false }: ArticleCardProps) {
-  const { frontmatter } = article;
+  const { frontmatter, readTime } = article;
   
   return (
     <Link href={`/reviews/${article.slug}`} className="group">
@@ -46,7 +47,7 @@ export function ArticleCard({ article, featured = false }: ArticleCardProps) {
             </div>
             <div className="flex items-center gap-1">
               <Clock className="w-4 h-4" />
-              <span>5 min read</span>
+              <span>{readTime} min read</span>
             </div>
           </div>
         </div>

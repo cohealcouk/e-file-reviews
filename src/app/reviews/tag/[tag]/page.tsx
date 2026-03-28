@@ -20,6 +20,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${tag} Reviews - E-file Reviews`,
     description: `Expert reviews tagged with "${tag}" for UK healthcare professionals.`,
+    alternates: { canonical: `https://efilereviews.co.uk/reviews/tag/${params.tag}` },
+    openGraph: {
+      title: `${tag} Reviews - E-file Reviews`,
+      description: `Expert reviews tagged with "${tag}" for UK healthcare professionals.`,
+      url: `https://efilereviews.co.uk/reviews/tag/${params.tag}`,
+      type: 'website',
+    },
   };
 }
 
