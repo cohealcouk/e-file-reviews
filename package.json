@@ -9,7 +9,13 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "keywords": ["nail", "e-file", "micromotor", "reviews", "uk"],
+  "keywords": [
+    "nail",
+    "e-file",
+    "micromotor",
+    "reviews",
+    "uk"
+  ],
   "author": "E-file Reviews",
   "license": "MIT",
   "type": "commonjs",
@@ -23,6 +29,7 @@
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.575.0",
     "next": "^14.2.35",
+    "next-mdx-remote": "^6.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "typescript": "^5.9.3"

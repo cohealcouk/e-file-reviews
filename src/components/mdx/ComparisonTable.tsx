@@ -5,7 +5,7 @@ interface ComparisonTableProps {
   rows: string[][];
 }
 
-export function ComparisonTable({ headers, rows }: ComparisonTableProps) {
+export function ComparisonTable({ headers = [], rows = [] }: ComparisonTableProps) {
   return (
     <div className="overflow-x-auto my-8">
       <table className="w-full border-collapse bg-white border border-slate-200 rounded-lg overflow-hidden shadow-clinical">

@@ -38,8 +38,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/testing-lab" className="text-slate-300 hover:text-white transition-colors">
-                  Testing Lab
+                <Link href="/disclosure" className="text-slate-300 hover:text-white transition-colors">
+                  Affiliate Disclosure
                 </Link>
               </li>
             </ul>
@@ -69,10 +69,7 @@ export function Footer() {
               </p>
               <div className="mt-4 pt-4 border-t border-slate-700">
                 <p className="text-xs text-slate-400">
-                  © 2024 E-file Reviews. All rights reserved. | 
-                  <Link href="/certification" className="hover:text-white transition-colors">
-                    Certification Standards
-                  </Link>
+                  © 2025 E-file Reviews. All rights reserved.
                 </p>
               </div>
             </div>

@@ -1,9 +1,17 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getArticleBySlug, getAllArticles } from '@/lib/mdx';
 import { generateProductSchema, generateReviewSchema, generateBreadcrumbSchema } from '@/lib/structured-data';
 import { TableOfContents } from '@/components/mdx/TableOfContents';
 import { BackToShopButton } from '@/components/common/BackToShopButton';
+import {
+  ProductCard,
+  ProsCons,
+  ComparisonTable,
+  CallToAction,
+  AuthenticityWarning,
+} from '@/components/mdx';
 
 interface PageProps {
   params: { slug: string };
@@ -57,13 +65,21 @@ export async function generateStaticParams() {
 
 export default async function ReviewPage({ params }: PageProps) {
   const article = getArticleBySlug(params.slug);
-  
+
   if (!article) {
     notFound();
   }
 
   const { frontmatter, content } = article;
   const headings = extractHeadings(content);
+
+  const mdxComponents = {
+    ProductCard,
+    ProsCons,
+    ComparisonTable,
+    CallToAction,
+    AuthenticityWarning,
+  };
 
   return (
     <div className="grid md:grid-cols-4 gap-8">
@@ -80,7 +96,7 @@ export default async function ReviewPage({ params }: PageProps) {
             <h1 className="text-3xl font-bold text-slate-900 mb-4">
               {frontmatter.title}
             </h1>
-            
+
             <div className="flex items-center gap-6 text-sm text-slate-600">
               <div className="flex items-center gap-2">
                 <span>Reviewer:</span>
@@ -88,10 +104,10 @@ export default async function ReviewPage({ params }: PageProps) {
               </div>
               <div className="flex items-center gap-2">
                 <span>Published:</span>
-                <time>{new Date(frontmatter.date).toLocaleDateString('en-GB', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
+                <time>{new Date(frontmatter.date).toLocaleDateString('en-GB', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
                 })}</time>
               </div>
               {frontmatter.rating && (
@@ -104,7 +120,7 @@ export default async function ReviewPage({ params }: PageProps) {
           </header>
 
           {/* MDX Content */}
-          <div dangerouslySetInnerHTML={{ __html: content }} />
+          <MDXRemote source={content} components={mdxComponents} />
         </article>
 
         {/* Back to Shop Button - Mobile */}

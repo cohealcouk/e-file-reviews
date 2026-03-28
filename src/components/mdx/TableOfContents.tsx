@@ -1,7 +1,5 @@
 'use client';
 
-'use client';
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -50,13 +48,15 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
     setIsMobileOpen(false);
   };
 
-  // Mobile TOC
-  if (typeof window !== 'undefined' && window.innerWidth < 768) {
-    return (
-      <div className="mobile-toc">
+  return (
+    <>
+      {/* Mobile TOC button — visible below lg */}
+      <div className="mobile-toc lg:hidden">
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           className="btn-medical p-3 rounded-full shadow-clinical-lg"
+          aria-label={isMobileOpen ? 'Close navigation' : 'Open navigation'}
+          aria-expanded={isMobileOpen}
         >
           {isMobileOpen ? (
             <X className="w-5 h-5" />
@@ -64,9 +64,9 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
             <Menu className="w-5 h-5" />
           )}
         </button>
-        
+
         {isMobileOpen && (
-          <div className="fixed inset-0 bg-black/50 z-50 md:hidden">
+          <div className="fixed inset-0 bg-black/50 z-50">
             <div className="absolute right-4 top-4 bg-white border border-slate-200 rounded-lg shadow-clinical-lg w-64 max-h-96 overflow-y-auto">
               <div className="p-4">
                 <div className="flex items-center justify-between mb-4">
@@ -74,6 +74,7 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
                   <button
                     onClick={() => setIsMobileOpen(false)}
                     className="text-slate-500 hover:text-slate-700"
+                    aria-label="Close navigation"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -94,26 +95,24 @@ export function TableOfContents({ headings }: TableOfContentsProps) {
           </div>
         )}
       </div>
-    );
-  }
 
-  // Desktop TOC
-  return (
-    <div className="toc-sidebar hidden lg:block">
-      <h3 className="toc-title">Table of Contents</h3>
-      <nav className="space-y-1">
-        {headings.map((heading) => (
-          <button
-            key={heading.id}
-            onClick={() => scrollToHeading(heading.id)}
-            className={`toc-link ${activeId === heading.id ? 'active' : ''} ${
-              heading.level === 3 ? 'pl-4' : ''
-            }`}
-          >
-            {heading.title}
-          </button>
-        ))}
-      </nav>
-    </div>
+      {/* Desktop TOC — visible at lg and above */}
+      <div className="toc-sidebar hidden lg:block">
+        <h3 className="toc-title">Table of Contents</h3>
+        <nav className="space-y-1">
+          {headings.map((heading) => (
+            <button
+              key={heading.id}
+              onClick={() => scrollToHeading(heading.id)}
+              className={`toc-link ${activeId === heading.id ? 'active' : ''} ${
+                heading.level === 3 ? 'pl-4' : ''
+              }`}
+            >
+              {heading.title}
+            </button>
+          ))}
+        </nav>
+      </div>
+    </>
   );
 }
