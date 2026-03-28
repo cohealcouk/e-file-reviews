@@ -50,6 +50,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: frontmatter.description,
       type: 'article',
       url: `https://efilereviews.co.uk/reviews/${params.slug}`,
+      siteName: 'E-file Reviews',
+      locale: 'en_GB',
+      images: [
+        {
+          url: '/og-image.svg',
+          width: 1200,
+          height: 630,
+          alt: frontmatter.title,
+        },
+      ],
+      publishedTime: frontmatter.date,
+      authors: [frontmatter.reviewer || 'Dr. James Thompson, PhD'],
+      tags: frontmatter.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: frontmatter.title,
+      description: frontmatter.description,
+      images: ['/og-image.svg'],
     },
     other: {
       'application/ld+json': JSON.stringify([productSchema, reviewSchema, breadcrumbSchema]),
