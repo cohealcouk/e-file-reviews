@@ -7,6 +7,7 @@ import { TableOfContents } from '@/components/mdx/TableOfContents';
 import { BackToShopButton } from '@/components/common/BackToShopButton';
 import { StarRating } from '@/components/common/StarRating';
 import { Breadcrumb } from '@/components/common/Breadcrumb';
+import { Clock } from 'lucide-react';
 import {
   ProductCard,
   ProsCons,
@@ -75,7 +76,7 @@ export default async function ReviewPage({ params }: PageProps) {
     notFound();
   }
 
-  const { frontmatter, content } = article;
+  const { frontmatter, content, readTime } = article;
   const headings = extractHeadings(content);
 
   const mdxComponents = {
@@ -108,7 +109,7 @@ export default async function ReviewPage({ params }: PageProps) {
               {frontmatter.title}
             </h1>
 
-            <div className="flex items-center gap-6 text-sm text-slate-600">
+            <div className="flex flex-wrap items-center gap-4 text-sm text-slate-600">
               <div className="flex items-center gap-2">
                 <span>Reviewer:</span>
                 <span className="font-semibold text-slate-800">{frontmatter.reviewer}</span>
@@ -121,10 +122,12 @@ export default async function ReviewPage({ params }: PageProps) {
                   day: 'numeric'
                 })}</time>
               </div>
+              <div className="flex items-center gap-1">
+                <Clock className="w-4 h-4" />
+                <span>{readTime} min read</span>
+              </div>
               {frontmatter.rating && (
-                <div className="flex items-center gap-2">
-                  <StarRating rating={frontmatter.rating} size="sm" />
-                </div>
+                <StarRating rating={frontmatter.rating} size="sm" />
               )}
             </div>
           </header>

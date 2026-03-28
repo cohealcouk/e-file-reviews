@@ -44,7 +44,7 @@ export default function HomePage() {
             </div>
             
             {/* Trust Indicators */}
-            <div className="grid md:grid-cols-4 gap-8 mt-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
               <div className="text-center">
                 <div className="w-16 h-16 bg-medical-100 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Gauge className="w-8 h-8 text-medical-500" />
