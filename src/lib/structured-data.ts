@@ -36,7 +36,7 @@ export function generateProductSchema(frontmatter: ArticleFrontmatter) {
     brand: frontmatter.brand || 'Saeyang',
     category: 'Clinical E-file',
     price: frontmatter.price || 'Contact for pricing',
-    availability: 'https://coheal.co.uk'
+    availability: 'https://schema.org/InStock'
   };
 
   return {
@@ -86,7 +86,7 @@ export function generateReviewSchema(frontmatter: ArticleFrontmatter, content: s
       '@type': 'Person',
       name: reviewData.author.name,
       jobTitle: 'Clinical Equipment Specialist',
-      credentials: reviewData.author.credentials,
+      description: reviewData.author.credentials.join(', '),
       knowsAbout: [
         'Clinical Equipment Testing',
         'Torque Safety Analysis',

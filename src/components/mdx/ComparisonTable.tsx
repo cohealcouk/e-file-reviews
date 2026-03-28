@@ -25,7 +25,7 @@ export function ComparisonTable({ headers = [], rows = [] }: ComparisonTableProp
           {rows.map((row, rowIndex) => (
             <tr
               key={rowIndex}
-              className={rowIndex % 2 === 0 ? 'bg-gray-25' : 'bg-white'}
+              className={rowIndex % 2 === 0 ? 'bg-slate-50' : 'bg-white'}
             >
               {row.map((cell, cellIndex) => (
                 <td

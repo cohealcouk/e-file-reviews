@@ -26,12 +26,12 @@ export function ArticleCard({ article, featured = false }: ArticleCardProps) {
     <Link href={`/reviews/${article.slug}`} className="group">
       <article className={`card p-6 ${featured ? 'md:col-span-2' : ''}`}>
         {frontmatter.featured && (
-          <div className="inline-block bg-gradient-to-r from-teal-500 to-teal-600 text-white text-xs font-bold px-4 py-2 rounded-full mb-4 shadow-md">
+          <div className="inline-block bg-gradient-to-r from-medical-500 to-medical-600 text-white text-xs font-bold px-4 py-2 rounded-full mb-4 shadow-md">
             Featured
           </div>
         )}
         
-        <h2 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-teal-600 transition-all duration-200">
+        <h2 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-medical-600 transition-all duration-200">
           {frontmatter.title}
         </h2>
         

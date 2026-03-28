@@ -7,6 +7,8 @@ import { TableOfContents } from '@/components/mdx/TableOfContents';
 import { BackToShopButton } from '@/components/common/BackToShopButton';
 import { StarRating } from '@/components/common/StarRating';
 import { Breadcrumb } from '@/components/common/Breadcrumb';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
 import { Clock } from 'lucide-react';
 import {
   ProductCard,
@@ -107,6 +109,9 @@ export default async function ReviewPage({ params }: PageProps) {
   };
 
   return (
+    <div className="min-h-screen grid-pattern-bg">
+      <Header />
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div className="grid md:grid-cols-4 gap-8">
       {/* Table of Contents - Desktop */}
       <div className="hidden lg:block">
@@ -158,6 +163,9 @@ export default async function ReviewPage({ params }: PageProps) {
         {/* Back to Shop Button - Mobile */}
         <BackToShopButton />
       </div>
+    </div>
+      </main>
+      <Footer />
     </div>
   );
 }
