@@ -26,12 +26,12 @@ export function ArticleCard({ article, featured = false }: ArticleCardProps) {
     <Link href={`/reviews/${article.slug}`} className="group">
       <article className={`card p-6 ${featured ? 'md:col-span-2' : ''}`}>
         {frontmatter.featured && (
-          <div className="inline-block bg-gradient-to-r from-medical-500 to-medical-600 text-white text-xs font-bold px-4 py-2 rounded-full mb-4 shadow-md">
+          <div className="inline-block bg-gradient-to-r from-medical-500 to-orange-500 text-white text-xs font-bold px-4 py-2 rounded-full mb-4 shadow-md">
             Featured
           </div>
         )}
         
-        <h2 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-medical-600 transition-all duration-200">
+        <h2 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-medical-600 transition-colors">
           {frontmatter.title}
         </h2>
         
@@ -40,7 +40,7 @@ export function ArticleCard({ article, featured = false }: ArticleCardProps) {
         </p>
         
         <div className="flex items-center justify-between text-sm text-slate-500 mb-4">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-wrap">
             <div className="flex items-center gap-1">
               <Calendar className="w-4 h-4" />
               <time>{format(new Date(frontmatter.date), 'MMM d, yyyy')}</time>
@@ -58,7 +58,7 @@ export function ArticleCard({ article, featured = false }: ArticleCardProps) {
             {frontmatter.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
-                className="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded-md border border-slate-200"
+                className="bg-teal-50 text-teal-800 text-xs px-3 py-1 rounded-full border border-teal-100"
               >
                 {tag}
               </span>

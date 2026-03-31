@@ -40,10 +40,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const breadcrumbSchema = generateBreadcrumbSchema(params.slug, frontmatter.title);
 
   return {
-    title: `${frontmatter.title} - Expert Technical Review`,
+    title: `${frontmatter.title} - Professional Technical Review`,
     description: frontmatter.description,
     keywords: frontmatter.tags.join(', '),
-    authors: [{ name: frontmatter.reviewer || 'Clinical Equipment Expert' }],
+    authors: [{ name: frontmatter.reviewer || 'E-file Reviews Editorial Team' }],
     alternates: {
       canonical: `https://efilereviews.co.uk/reviews/${params.slug}`,
     },
@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         },
       ],
       publishedTime: frontmatter.date,
-      authors: [frontmatter.reviewer || 'Dr. James Thompson, PhD'],
+      authors: [frontmatter.reviewer || 'E-file Reviews Editorial Team'],
       tags: frontmatter.tags,
     },
     twitter: {
@@ -126,7 +126,7 @@ export default async function ReviewPage({ params }: PageProps) {
           { label: frontmatter.title },
         ]} />
 
-        <article className="prose max-w-none">
+        <article className="prose max-w-none rounded-3xl border border-slate-200 bg-white/90 p-6 md:p-8 shadow-clinical">
           {/* Article Header */}
           <header className="mb-8 pb-6 border-b border-slate-200">
             <h1 className="text-3xl font-bold text-slate-900 mb-4">

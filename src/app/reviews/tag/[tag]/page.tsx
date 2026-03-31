@@ -19,11 +19,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const tag = decodeURIComponent(params.tag);
   return {
     title: `${tag} Reviews - E-file Reviews`,
-    description: `Expert reviews tagged with "${tag}" for UK healthcare professionals.`,
+    description: `Independent professional reviews tagged with "${tag}".`,
     alternates: { canonical: `https://efilereviews.co.uk/reviews/tag/${params.tag}` },
     openGraph: {
       title: `${tag} Reviews - E-file Reviews`,
-      description: `Expert reviews tagged with "${tag}" for UK healthcare professionals.`,
+      description: `Independent professional reviews tagged with "${tag}".`,
       url: `https://efilereviews.co.uk/reviews/tag/${params.tag}`,
       type: 'website',
     },
@@ -46,12 +46,12 @@ export default function TagPage({ params }: PageProps) {
         <section className="section-white py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-6">
-              <Link href="/reviews" className="text-medical-600 hover:underline text-sm">
+              <Link href="/reviews" className="text-medical-600 hover:underline text-sm font-semibold">
                 ← All Reviews
               </Link>
             </div>
 
-            <div className="mb-10">
+            <div className="mb-10 rounded-3xl border border-slate-200 bg-white/85 p-6 md:p-8 shadow-clinical">
               <h1 className="text-4xl font-bold text-slate-900 mb-3">
                 Reviews tagged: <span className="text-medical-600">{tag}</span>
               </h1>

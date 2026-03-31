@@ -10,7 +10,7 @@ interface CallToActionProps {
 
 export function CallToAction({ text, link, subtitle }: CallToActionProps) {
   return (
-    <div className="bg-gradient-to-r from-slate-50 to-gray-50 border-t border-slate-200 py-12">
+    <div className="bg-gradient-to-r from-orange-50/70 via-white to-teal-50/70 border-t border-slate-200 py-12 rounded-2xl my-8">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-2xl font-bold text-slate-900 mb-3">{text}</h2>
         {subtitle && (
@@ -21,7 +21,7 @@ export function CallToAction({ text, link, subtitle }: CallToActionProps) {
           href={link}
           className="btn-medical inline-flex items-center gap-2 group"
         >
-          Shop Certified Equipment
+          View Product Offer
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>

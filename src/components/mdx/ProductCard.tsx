@@ -30,10 +30,9 @@ export function ProductCard({
 
   return (
     <div className="card-clinical relative overflow-hidden">
-      {/* Certified Genuine Badge */}
       {certified && (
         <div className="certified-badge">
-          Certified Genuine
+          Verified Source
         </div>
       )}
 
@@ -74,7 +73,7 @@ export function ProductCard({
               <div className="spec-row">
                 <Shield className="spec-icon" />
                 <span className="spec-label">Safety:</span>
-                <span className="spec-value">White Finger Certified</span>
+                <span className="spec-value">Pro Session Ready</span>
               </div>
             </div>
 
@@ -103,7 +102,7 @@ export function ProductCard({
               rel="noopener noreferrer"
             >
               <ExternalLink className="w-4 h-4" />
-              Check Availability at Coheal UK
+              Check Price at Coheal UK
             </Link>
           </div>
         </div>

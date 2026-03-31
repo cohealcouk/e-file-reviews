@@ -4,11 +4,11 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'E-file Reviews',
     short_name: 'E-file Reviews',
-    description: 'Expert technical reviews of professional e-files and clinical equipment for UK healthcare professionals.',
+    description: 'Independent reviews of professional e-files and micromotors for beauty, podiatry and dental/prosthetic workflows.',
     start_url: '/',
     display: 'standalone',
     background_color: '#f8fafc',
-    theme_color: '#005EB8',
+    theme_color: '#0f766e',
     icons: [
       {
         src: '/favicon.svg',

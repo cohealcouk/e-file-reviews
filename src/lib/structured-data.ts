@@ -34,7 +34,7 @@ export function generateProductSchema(frontmatter: ArticleFrontmatter) {
     name: frontmatter.title,
     description: frontmatter.description,
     brand: frontmatter.brand || 'Saeyang',
-    category: 'Clinical E-file',
+    category: 'Professional E-file Micromotor',
     price: frontmatter.price || 'Contact for pricing',
     availability: 'https://schema.org/InStock'
   };
@@ -62,10 +62,10 @@ export function generateProductSchema(frontmatter: ArticleFrontmatter) {
 export function generateReviewSchema(frontmatter: ArticleFrontmatter, content: string) {
   const reviewData: ReviewStructuredData = {
     author: {
-      name: frontmatter.reviewer || 'Clinical Equipment Expert',
-      credentials: ['NHS Certified Technician', 'Clinical Safety Specialist'],
-      experience: '10+ years clinical equipment testing',
-      certifications: ['IOSH 45001', 'NHS Medical Equipment Safety']
+      name: frontmatter.reviewer || 'Professional E-file Reviewer',
+      credentials: ['Beauty Device Specialist', 'Podiatry Equipment Tester'],
+      experience: '10+ years testing e-file and micromotor systems',
+      certifications: ['Electrical Safety Awareness', 'Independent Product Testing']
     },
     datePublished: frontmatter.date,
     reviewRating: frontmatter.rating || 4.5,
@@ -85,13 +85,14 @@ export function generateReviewSchema(frontmatter: ArticleFrontmatter, content: s
     author: {
       '@type': 'Person',
       name: reviewData.author.name,
-      jobTitle: 'Clinical Equipment Specialist',
+      jobTitle: 'Professional E-file Specialist',
       description: reviewData.author.credentials.join(', '),
       knowsAbout: [
-        'Clinical Equipment Testing',
-        'Torque Safety Analysis',
-        'Vibration Control Systems',
-        'Medical Equipment Certification'
+        'Professional E-file Testing',
+        'Micromotor Torque Analysis',
+        'Vibration Control',
+        'Salon and Podiatry Workflows',
+        'Dental Prosthetic Bench Tools'
       ]
     },
     datePublished: reviewData.datePublished,
@@ -100,7 +101,7 @@ export function generateReviewSchema(frontmatter: ArticleFrontmatter, content: s
       ratingValue: reviewData.reviewRating,
       bestRating: 5,
       worstRating: 1,
-      ratingExplanation: 'Based on technical performance, safety features, and clinical usability'
+      ratingExplanation: 'Based on technical performance, handling comfort, durability, and safety'
     },
     reviewBody: reviewData.reviewBody,
     publisher: {

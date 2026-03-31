@@ -11,18 +11,18 @@ export function AuthenticityWarning() {
       
       <div className="authenticity-warning-content">
         <p className="mb-3">
-          <strong>Counterfeit Alert:</strong> Saeyang products sold on marketplace platforms (Amazon, eBay, etc.) are frequently non-certified, unauthorized replicas that may compromise clinical safety and performance.
+          <strong>Counterfeit Alert:</strong> Saeyang products sold on open marketplaces (Amazon, eBay, etc.) are often unauthorized replicas that can compromise durability, precision, and electrical safety.
         </p>
         
         <div className="flex items-start gap-3 mb-3">
           <Shield className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
           <div>
-            <strong className="text-amber-800">Certified Genuine Products:</strong> Only purchase from authorized distributors like Coheal UK to ensure authentic equipment with proper safety certifications and warranty coverage.
+            <strong className="text-amber-800">Verified Genuine Products:</strong> Buy from authorized distributors like Coheal UK to secure warranty coverage and original manufacturer quality.
           </div>
         </div>
         
         <p className="text-sm">
-          <strong>Risk Factors:</strong> Non-certified devices may have inaccurate torque ratings, inadequate vibration control, and lack proper electrical safety certifications required for clinical environments.
+          <strong>Risk Factors:</strong> Non-genuine devices can show unstable torque, higher vibration, and poor electrical safety controls under longer sessions.
         </p>
       </div>
     </div>

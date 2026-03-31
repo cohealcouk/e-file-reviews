@@ -7,11 +7,11 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'All Reviews - E-file Reviews',
-  description: 'Browse all expert technical reviews of professional e-files and clinical equipment for UK healthcare professionals.',
+  description: 'Browse independent reviews of professional e-files, podiatry units, and dental/prosthetic micromotors.',
   alternates: { canonical: 'https://efilereviews.co.uk/reviews' },
   openGraph: {
     title: 'All Reviews - E-file Reviews',
-    description: 'Browse all expert technical reviews of professional e-files and clinical equipment for UK healthcare professionals.',
+    description: 'Browse independent reviews of professional e-files, podiatry units, and dental/prosthetic micromotors.',
     url: 'https://efilereviews.co.uk/reviews',
     type: 'website',
   },
@@ -28,10 +28,13 @@ export default function ReviewsPage() {
       <main>
         <section className="section-white py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-10">
+            <div className="mb-10 rounded-3xl border border-slate-200 bg-white/85 p-6 md:p-8 shadow-clinical">
+              <p className="inline-flex rounded-full bg-teal-50 border border-teal-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-teal-700 mb-3">
+                Review Library
+              </p>
               <h1 className="text-4xl font-bold text-slate-900 mb-3">All Reviews</h1>
               <p className="text-lg text-slate-600">
-                {articles.length} expert technical review{articles.length !== 1 ? 's' : ''} of clinical equipment
+                {articles.length} independent review{articles.length !== 1 ? 's' : ''} across manicure, pedicure, podiatry and dental lab gear
               </p>
             </div>
 
@@ -42,7 +45,7 @@ export default function ReviewsPage() {
                   <Link
                     key={tag}
                     href={`/reviews/tag/${encodeURIComponent(tag)}`}
-                    className="bg-slate-100 hover:bg-medical-100 hover:text-medical-700 text-slate-700 text-sm px-3 py-1 rounded-full border border-slate-200 transition-colors"
+                    className="bg-white hover:bg-teal-50 hover:text-teal-700 text-slate-700 text-sm px-3 py-1 rounded-full border border-slate-200 transition-colors"
                   >
                     {tag}
                   </Link>

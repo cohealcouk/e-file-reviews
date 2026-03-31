@@ -11,7 +11,7 @@ export function BackToShopButton() {
       rel="noopener noreferrer"
     >
       <ShoppingCart className="w-4 h-4" />
-      <span className="text-sm font-medium">Back to Shop</span>
+      <span className="text-sm font-medium">Shop Coheal</span>
     </Link>
   );
 }

@@ -9,7 +9,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Clinical Professional Palette
         slate: {
           50: "#f8fafc",
           100: "#f1f5f9",
@@ -22,20 +21,19 @@ module.exports = {
           800: "#1e293b",
           900: "#0f172a",
         },
-        // Medical Blue (NHS Style)
+        // Main brand palette
         medical: {
-          50: "#eff6ff",
-          100: "#dbeafe",
-          200: "#bfdbfe",
-          300: "#93c5fd",
-          400: "#60a5fa",
-          500: "#005EB8", // NHS Blue
-          600: "#004799",
-          700: "#003870",
-          800: "#002a4d",
-          900: "#001c33",
+          50: "#f0fdfa",
+          100: "#ccfbf1",
+          200: "#99f6e4",
+          300: "#5eead4",
+          400: "#2dd4bf",
+          500: "#0f766e",
+          600: "#115e59",
+          700: "#134e4a",
+          800: "#042f2e",
+          900: "#022c22",
         },
-        // Technical Grays
         gray: {
           25: "#fcfcfc",
           50: "#f9fafb",
@@ -49,7 +47,6 @@ module.exports = {
           800: "#1f2937",
           900: "#111827",
         },
-        // Warning Amber for AuthenticityWarning
         amber: {
           50: "#fffbeb",
           100: "#fef3c7",
@@ -64,19 +61,19 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Inter", "Geist", "system-ui", "-apple-system", "sans-serif"],
+        sans: ["Manrope", "Sora", "Segoe UI", "sans-serif"],
         mono: ["JetBrains Mono", "Fira Code", "monospace"],
       },
       backgroundImage: {
-        'grid-pattern': `linear-gradient(to right, rgba(0, 94, 184, 0.03) 1px, transparent 1px),
-                         linear-gradient(to bottom, rgba(0, 94, 184, 0.03) 1px, transparent 1px)`,
-        'grid-pattern-dark': `linear-gradient(to right, rgba(0, 94, 184, 0.08) 1px, transparent 1px),
-                            linear-gradient(to bottom, rgba(0, 94, 184, 0.08) 1px, transparent 1px)`,
+        'grid-pattern': `linear-gradient(to right, rgba(15, 118, 110, 0.05) 1px, transparent 1px),
+                         linear-gradient(to bottom, rgba(15, 118, 110, 0.05) 1px, transparent 1px)`,
+        'grid-pattern-dark': `linear-gradient(to right, rgba(15, 118, 110, 0.1) 1px, transparent 1px),
+                            linear-gradient(to bottom, rgba(15, 118, 110, 0.1) 1px, transparent 1px)`,
       },
       boxShadow: {
-        'clinical': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        'clinical-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-        'technical': '0 1px 3px 0 rgba(0, 94, 184, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        'clinical': '0 20px 24px -28px rgba(15, 23, 42, 0.52)',
+        'clinical-lg': '0 24px 30px -30px rgba(15, 23, 42, 0.7)',
+        'technical': '0 14px 18px -20px rgba(17, 94, 89, 0.48)',
       },
       spacing: {
         '18': '4.5rem',

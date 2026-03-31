@@ -34,7 +34,7 @@ export default function TermsPage() {
               the accuracy, completeness, or suitability of the information for any particular purpose.
             </p>
             <p>
-              Always consult the manufacturer and a qualified professional before purchasing or using clinical equipment.
+              Always consult the manufacturer and a qualified professional before purchasing or using professional e-file or micromotor equipment.
             </p>
           </section>
 
